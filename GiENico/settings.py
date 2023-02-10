@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-w)_cv6)o$5r!*0+uqvhunks_49kjkumw69c1c6qt(t-q8h&02@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', 'https://squid-app-g8yx8.ondigitalocean.app/', 'squid-app-g8yx8.ondigitalocean.app']
 
 
 # Application definition
