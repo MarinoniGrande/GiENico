@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+
+{% block main %}
+<style>
+.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
+.show > .btn-success.dropdown-toggle {
+    color: var(--no-white);
+    background-color: #B45D87;
+    border-color: #863059;
+    cursor: default;
+}
+.btn-success:hover {
+    color: var(--no-white);
+    background-color: #B45D87;
+    border-color: #863059;
+}
+</style>
+    <div class="mt-5 text-center">
+        <div class="btn btn-lg btn-success" style="background: #B45D87;" onclick="gerarMotivo()">Gerar motivo</div>
+    </div>
+    <script>
+    var lista = [{% for item in motivos %}`{{ item.nome }}`,{% endfor %}]
+
+    function gerarMotivo(){
+        var motivo = lista[Math.floor(Math.random()*lista.length)];
+        $('#modalDescricao').html(`<p class="text-center font-weight-bold ">${motivo}</p>`)
+        $('#myModal').modal('toggle');
+    }
+
+    </script>
+
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitulo">Motivo</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="modalDescricao">
+
+                    </div>
+                    <div id="modalImagem" class="mt-2">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

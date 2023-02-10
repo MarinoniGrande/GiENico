@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+
+{% block main %}
+
+    <div class="text-center">
+        <p class="font-weight-bold font-2xl text-center">Estados que já visitamos</p>
+        <img src="{% static 'mapa/mapa_brazil.png' %}" alt="Mapa Brasil" width="350px">
+        <p class="font-weight-bold font-2xl mt-3 text-center">Países que já visitamos</p>
+        <img src="{% static 'mapa/mapa_mundo.png' %}" alt="Mapa Mundo" width="350px">
+    </div>
+
+{% endblock %}
+
