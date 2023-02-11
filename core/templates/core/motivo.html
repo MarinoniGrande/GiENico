@@ -22,7 +22,7 @@
         <div class="btn btn-lg btn-success" style="background: #B45D87;" onclick="gerarMotivo()">Gerar motivo</div>
     </div>
     <script>
-    var lista = []//[{% for item in motivos %}`{{ item.nome }}`,{% endfor %}]
+    var lista = [{% for item in motivos %}`{{ item.nome }}`,{% endfor %}]
 
     function gerarMotivo(){
         var motivo = lista[Math.floor(Math.random()*lista.length)];

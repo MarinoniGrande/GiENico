@@ -8,14 +8,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
-
+            var date = new Date();
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
                     right: 'dayGridMonth,timeGridWeek,timeGridDay'
                 },
-                initialDate: '2023-01-12',
+                initialDate: date.getFullYear()+"-"+(date.getMonth()+1).toString().padStart(2, "0")+"-"+ date.getDate(),
                 navLinks: true, // can click day/week names to navigate views
                 selectable: true,
                 selectMirror: true,
