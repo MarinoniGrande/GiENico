@@ -51,7 +51,7 @@ class MotivoView(View):
     def get(self, *args, **kwargs):
         template_name = 'core/motivo.html'
         context = {
-            'motivos': core.models.Motivo.objects.values('tipo', 'nome', 'id')
+            'motivos': [],# core.models.Motivo.objects.values('tipo', 'nome', 'id')
         }
         return render(self.request, template_name=template_name, context=context)
 
